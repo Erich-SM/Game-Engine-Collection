@@ -38,4 +38,3 @@ void present_scene(void)
         SDL_RenderCopyEx(game.ren, game.tex, NULL, NULL, 0, NULL, flip);
         SDL_RenderPresent(game.ren);
 }
-

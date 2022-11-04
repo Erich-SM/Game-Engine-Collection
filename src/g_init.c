@@ -1,6 +1,7 @@
 #include "g_init.h"
 
 
+/*
 //---center tube---
 // 5 28
 int load_sectors[]=
@@ -44,6 +45,7 @@ int load_walls[]=
 152,168, 152,160, 2,
 152,160, 160,152, 3,
 };
+*/
 
 /*
 uint32_t
@@ -80,7 +82,6 @@ load_walls[] =
 };
 */
 
-/*
 //---doom level---
 int load_sectors[]=
 {
@@ -151,7 +152,6 @@ int load_walls[]=
 112,152, 104,152, 4,
 104,152, 104,144, 5,
 };
-*/
  
 void
 init_secswalls()
@@ -200,8 +200,6 @@ init_textures()
                         W_textures[7][TXW * y + x] = 128 + 256 * 128 + 65536 * 128; //flat grey texture
                 }
         }
-
-        printf("%i\n", W_textures[1][1490]);
 }
 
 void

@@ -20,10 +20,10 @@ void do_input(void)
 	read_keys();
                /* mouse aiming */
         int x,y;
-        int yaw;
         SDL_GetRelativeMouseState(&x,&y);
+        //int yaw = y;
         P.a += x * 0.4;
-        //yaw          = clamp(yaw - y*0.4, -5, 5);
+       // yaw          = clamp(yaw - y*0.4, -5, 5);
         //P.i   = yaw - P.z*0.4;
         if(P.a < 0) P.a += MA;
         if(P.a > MA-1) P.a -= MA;

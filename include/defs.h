@@ -6,8 +6,8 @@
 #define H2      (SH/2)
 #define T       0
 #define MA      360 // max angles for viewing
-#define NW       28
-#define NS       5
+#define NW       52
+#define NS       10
 #define TXH     64
 #define TXW     64
 

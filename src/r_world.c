@@ -1,7 +1,7 @@
 #include "r_world.h"
 
 void
-draw_wall(int x1, int x2, int b1, int b2, int t1, int t2, int c, int s)
+draw_wall(int x1, int x2, int b1, int b2, int t1, int t2, int c, int s, int w)
 {
         int y;
         int dyb = b2 - b1; 
@@ -35,18 +35,15 @@ draw_wall(int x1, int x2, int b1, int b2, int t1, int t2, int c, int s)
                                 pixel(x, y, get_color(S[s].c2));
                         }
                 }
-                /*
                 int lineHeight = (S[s].z2 - S[s].z1);
                 int step = 1 * TXH / lineHeight;
                 int texPos = (S[s].ws - SH / 2 + lineHeight / 2) * step;
-                */
+                int texX = x;
                 for(int y = y1; y < y2; y++){
-                        /*
                         int texY = texPos & (TXH - 1);
                         texPos += step;
-                        uint32_t color = W_textures[3][TXH * texY + x];
-                        */
-                        pixel(x, y, c);
+                        uint32_t color = W_textures[c][TXH * texY + texX];
+                        pixel(x, y, color);
                 }
         }
 }
@@ -119,7 +116,7 @@ draw_3d()
                                 wx[3] = wx[3] * 200 / wy[3] + W2; wy[3] = wz[3] * 200 / wy[3] + H2;
 
 
-                                draw_wall(wx[0], wx[1], wy[0], wy[1], wy[2], wy[3], get_color(W[w].c), s);
+                                draw_wall(wx[0], wx[1], wy[0], wy[1], wy[2], wy[3], W[w].c, s, w);
                         }
                         S[s].d /= (S[s].we - S[s].ws);
                         S[s].surface *= -1;
